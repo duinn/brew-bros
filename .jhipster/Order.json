@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "beerOptionOrder",
+            "otherEntityName": "beerOptionOrder",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "order"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "placedDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "deliveryDateTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "orderStatus",
+            "fieldType": "OrderStatus",
+            "fieldValues": "DRAFT,PLACED,COMPLETE"
+        }
+    ],
+    "changelogDate": "20190617211911",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "jhi_order",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

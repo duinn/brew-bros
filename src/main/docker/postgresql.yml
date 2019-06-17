@@ -1,0 +1,11 @@
+version: '2'
+services:
+  brewbros-postgresql:
+    image: postgres:11.3
+    # volumes:
+    #     - ~/volumes/jhipster/brewbros/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=brewbros
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432

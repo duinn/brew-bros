@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.duinn.brewbros"
+    },
+    "jhipsterVersion": "6.1.0",
+    "applicationType": "monolith",
+    "baseName": "brewbros",
+    "packageName": "com.duinn.brewbros",
+    "packageFolder": "com/duinn/brewbros",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "memcached",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "ZGI0YWQ5NThlZjRmZTc4NzliNWMxMTdhMDU0MjA4ZDYxMmY5N2Q5ZDRlODQ0NmQyNjNkNWU1MzZkNWZiOGExYjQ1YjFjYzFmMDI4OTM2ZmNjMzk3MWVhYzJiNTU1Yzg4YTMyMzZkNzNjMTc0ZmMyYzVlODI5NDU1MzJlZGQ2ODM=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "journal",
+    "clientThemeVariant": "primary",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}

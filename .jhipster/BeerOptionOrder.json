@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "beerOption",
+            "otherEntityName": "beerOption",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "beerOptionOrders"
+        },
+        {
+            "relationshipName": "order",
+            "otherEntityName": "order",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": "1"
+        }
+    ],
+    "changelogDate": "20190617210803",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "beer_option_order",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}
