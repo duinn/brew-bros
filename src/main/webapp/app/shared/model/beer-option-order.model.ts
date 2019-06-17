@@ -1,11 +1,11 @@
-import { IBeerOption } from 'app/shared/model/beer-option.model';
 import { IOrder } from 'app/shared/model/order.model';
+import { IBeerOption } from 'app/shared/model/beer-option.model';
 
 export interface IBeerOptionOrder {
   id?: number;
   amount?: number;
-  beerOptions?: IBeerOption[];
   order?: IOrder;
+  beerOption?: IBeerOption;
 }
 
 export const defaultValue: Readonly<IBeerOptionOrder> = {};

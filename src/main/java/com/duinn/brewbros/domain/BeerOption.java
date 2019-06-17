@@ -1,5 +1,4 @@
 package com.duinn.brewbros.domain;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -37,10 +36,6 @@ public class BeerOption implements Serializable {
     @DecimalMax(value = "100")
     @Column(name = "abv")
     private Double abv;
-
-    @ManyToOne
-    @JsonIgnoreProperties("beerOptions")
-    private BeerOptionOrder beerOptionOrders;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -114,19 +109,6 @@ public class BeerOption implements Serializable {
 
     public void setAbv(Double abv) {
         this.abv = abv;
-    }
-
-    public BeerOptionOrder getBeerOptionOrders() {
-        return beerOptionOrders;
-    }
-
-    public BeerOption beerOptionOrders(BeerOptionOrder beerOptionOrder) {
-        this.beerOptionOrders = beerOptionOrder;
-        return this;
-    }
-
-    public void setBeerOptionOrders(BeerOptionOrder beerOptionOrder) {
-        this.beerOptionOrders = beerOptionOrder;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

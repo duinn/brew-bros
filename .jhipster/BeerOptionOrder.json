@@ -3,16 +3,18 @@
     "clientRootFolder": "",
     "relationships": [
         {
-            "relationshipName": "beerOption",
-            "otherEntityName": "beerOption",
-            "relationshipType": "one-to-many",
-            "otherEntityRelationshipName": "beerOptionOrders"
-        },
-        {
             "relationshipName": "order",
             "otherEntityName": "order",
             "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityField": "placedDateTime",
+            "otherEntityRelationshipName": "beerOptionOrders"
+        },
+        {
+            "relationshipName": "beerOption",
+            "otherEntityName": "beerOption",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name",
+            "otherEntityRelationshipName": "beerOptionOrders"
         }
     ],
     "fields": [

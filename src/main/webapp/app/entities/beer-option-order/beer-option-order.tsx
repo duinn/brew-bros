@@ -96,6 +96,9 @@ export class BeerOptionOrder extends React.Component<IBeerOptionOrderProps, IBee
                     <th>
                       Order <FontAwesomeIcon icon="sort" />
                     </th>
+                    <th>
+                      Beer Option <FontAwesomeIcon icon="sort" />
+                    </th>
                     <th />
                   </tr>
                 </thead>
@@ -109,7 +112,18 @@ export class BeerOptionOrder extends React.Component<IBeerOptionOrderProps, IBee
                       </td>
                       <td>{beerOptionOrder.amount}</td>
                       <td>
-                        {beerOptionOrder.order ? <Link to={`order/${beerOptionOrder.order.id}`}>{beerOptionOrder.order.id}</Link> : ''}
+                        {beerOptionOrder.order ? (
+                          <Link to={`order/${beerOptionOrder.order.id}`}>{beerOptionOrder.order.placedDateTime}</Link>
+                        ) : (
+                          ''
+                        )}
+                      </td>
+                      <td>
+                        {beerOptionOrder.beerOption ? (
+                          <Link to={`beer-option/${beerOptionOrder.beerOption.id}`}>{beerOptionOrder.beerOption.name}</Link>
+                        ) : (
+                          ''
+                        )}
                       </td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">

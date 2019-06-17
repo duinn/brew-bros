@@ -105,9 +105,6 @@ export class BeerOption extends React.Component<IBeerOptionProps, IBeerOptionSta
                     <th className="hand" onClick={this.sort('abv')}>
                       Abv <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th>
-                      Beer Option Orders <FontAwesomeIcon icon="sort" />
-                    </th>
                     <th />
                   </tr>
                 </thead>
@@ -124,13 +121,6 @@ export class BeerOption extends React.Component<IBeerOptionProps, IBeerOptionSta
                       <td>{beerOption.brand}</td>
                       <td>{beerOption.volume}</td>
                       <td>{beerOption.abv}</td>
-                      <td>
-                        {beerOption.beerOptionOrders ? (
-                          <Link to={`beer-option-order/${beerOption.beerOptionOrders.id}`}>{beerOption.beerOptionOrders.id}</Link>
-                        ) : (
-                          ''
-                        )}
-                      </td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">
                           <Button tag={Link} to={`${match.url}/${beerOption.id}`} color="info" size="sm">

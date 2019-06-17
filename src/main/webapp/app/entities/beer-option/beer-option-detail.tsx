@@ -48,8 +48,6 @@ export class BeerOptionDetail extends React.Component<IBeerOptionDetailProps> {
               <span id="abv">Abv</span>
             </dt>
             <dd>{beerOptionEntity.abv}</dd>
-            <dt>Beer Option Orders</dt>
-            <dd>{beerOptionEntity.beerOptionOrders ? beerOptionEntity.beerOptionOrders.id : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/beer-option" replace color="info">
             <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>

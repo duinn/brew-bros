@@ -5,8 +5,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A BeerOptionOrder.
@@ -26,11 +24,13 @@ public class BeerOptionOrder implements Serializable {
     @Column(name = "amount")
     private Integer amount;
 
-    @OneToMany(mappedBy = "beerOptionOrders")
-    private Set<BeerOption> beerOptions = new HashSet<>();
+    @ManyToOne
+    @JsonIgnoreProperties("beerOptionOrders")
+    private Order order;
 
     @ManyToOne
-    private Order order;
+    @JsonIgnoreProperties("beerOptionOrders")
+    private BeerOption beerOption;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -54,31 +54,6 @@ public class BeerOptionOrder implements Serializable {
         this.amount = amount;
     }
 
-    public Set<BeerOption> getBeerOptions() {
-        return beerOptions;
-    }
-
-    public BeerOptionOrder beerOptions(Set<BeerOption> beerOptions) {
-        this.beerOptions = beerOptions;
-        return this;
-    }
-
-    public BeerOptionOrder addBeerOption(BeerOption beerOption) {
-        this.beerOptions.add(beerOption);
-        beerOption.setBeerOptionOrders(this);
-        return this;
-    }
-
-    public BeerOptionOrder removeBeerOption(BeerOption beerOption) {
-        this.beerOptions.remove(beerOption);
-        beerOption.setBeerOptionOrders(null);
-        return this;
-    }
-
-    public void setBeerOptions(Set<BeerOption> beerOptions) {
-        this.beerOptions = beerOptions;
-    }
-
     public Order getOrder() {
         return order;
     }
@@ -90,6 +65,19 @@ public class BeerOptionOrder implements Serializable {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public BeerOption getBeerOption() {
+        return beerOption;
+    }
+
+    public BeerOptionOrder beerOption(BeerOption beerOption) {
+        this.beerOption = beerOption;
+        return this;
+    }
+
+    public void setBeerOption(BeerOption beerOption) {
+        this.beerOption = beerOption;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

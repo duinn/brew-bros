@@ -18,7 +18,6 @@
     <include file="config/liquibase/changelog/20190617210803_added_entity_BeerOptionOrder.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190617211911_added_entity_Order.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="config/liquibase/changelog/20190617210400_added_entity_constraints_BeerOption.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190617210803_added_entity_constraints_BeerOptionOrder.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

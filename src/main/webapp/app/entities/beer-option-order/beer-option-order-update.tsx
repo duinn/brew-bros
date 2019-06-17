@@ -10,6 +10,8 @@ import { IRootState } from 'app/shared/reducers';
 
 import { IOrder } from 'app/shared/model/order.model';
 import { getEntities as getOrders } from 'app/entities/order/order.reducer';
+import { IBeerOption } from 'app/shared/model/beer-option.model';
+import { getEntities as getBeerOptions } from 'app/entities/beer-option/beer-option.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './beer-option-order.reducer';
 import { IBeerOptionOrder } from 'app/shared/model/beer-option-order.model';
 // tslint:disable-next-line:no-unused-variable
@@ -21,6 +23,7 @@ export interface IBeerOptionOrderUpdateProps extends StateProps, DispatchProps, 
 export interface IBeerOptionOrderUpdateState {
   isNew: boolean;
   orderId: string;
+  beerOptionId: string;
 }
 
 export class BeerOptionOrderUpdate extends React.Component<IBeerOptionOrderUpdateProps, IBeerOptionOrderUpdateState> {
@@ -28,6 +31,7 @@ export class BeerOptionOrderUpdate extends React.Component<IBeerOptionOrderUpdat
     super(props);
     this.state = {
       orderId: '0',
+      beerOptionId: '0',
       isNew: !this.props.match.params || !this.props.match.params.id
     };
   }
@@ -44,6 +48,7 @@ export class BeerOptionOrderUpdate extends React.Component<IBeerOptionOrderUpdat
     }
 
     this.props.getOrders();
+    this.props.getBeerOptions();
   }
 
   saveEntity = (event, errors, values) => {
@@ -67,7 +72,7 @@ export class BeerOptionOrderUpdate extends React.Component<IBeerOptionOrderUpdat
   };
 
   render() {
-    const { beerOptionOrderEntity, orders, loading, updating } = this.props;
+    const { beerOptionOrderEntity, orders, beerOptions, loading, updating } = this.props;
     const { isNew } = this.state;
 
     return (
@@ -111,7 +116,20 @@ export class BeerOptionOrderUpdate extends React.Component<IBeerOptionOrderUpdat
                     {orders
                       ? orders.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.id}
+                            {otherEntity.placedDateTime}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                <AvGroup>
+                  <Label for="beer-option-order-beerOption">Beer Option</Label>
+                  <AvInput id="beer-option-order-beerOption" type="select" className="form-control" name="beerOption.id">
+                    <option value="" key="0" />
+                    {beerOptions
+                      ? beerOptions.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.name}
                           </option>
                         ))
                       : null}
@@ -138,6 +156,7 @@ export class BeerOptionOrderUpdate extends React.Component<IBeerOptionOrderUpdat
 
 const mapStateToProps = (storeState: IRootState) => ({
   orders: storeState.order.entities,
+  beerOptions: storeState.beerOption.entities,
   beerOptionOrderEntity: storeState.beerOptionOrder.entity,
   loading: storeState.beerOptionOrder.loading,
   updating: storeState.beerOptionOrder.updating,
@@ -146,6 +165,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 
 const mapDispatchToProps = {
   getOrders,
+  getBeerOptions,
   getEntity,
   updateEntity,
   createEntity,

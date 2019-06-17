@@ -3,7 +3,7 @@
     "clientRootFolder": "",
     "relationships": [
         {
-            "relationshipName": "beerOptionOrder",
+            "relationshipName": "beerOptionOrders",
             "otherEntityName": "beerOptionOrder",
             "relationshipType": "one-to-many",
             "otherEntityRelationshipName": "order"

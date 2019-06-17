@@ -33,7 +33,9 @@ export class BeerOptionOrderDetail extends React.Component<IBeerOptionOrderDetai
             </dt>
             <dd>{beerOptionOrderEntity.amount}</dd>
             <dt>Order</dt>
-            <dd>{beerOptionOrderEntity.order ? beerOptionOrderEntity.order.id : ''}</dd>
+            <dd>{beerOptionOrderEntity.order ? beerOptionOrderEntity.order.placedDateTime : ''}</dd>
+            <dt>Beer Option</dt>
+            <dd>{beerOptionOrderEntity.beerOption ? beerOptionOrderEntity.beerOption.name : ''}</dd>
           </dl>
           <Button tag={Link} to="/entity/beer-option-order" replace color="info">
             <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>
